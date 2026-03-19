@@ -1,0 +1,3 @@
+DirectoryIndex user_index.php
+RewriteEngine On
+RewriteRule ^$ user_index.php [L]
