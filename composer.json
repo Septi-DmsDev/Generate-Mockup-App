@@ -1,0 +1,7 @@
+{
+    "name": "septi/generate-mockup-app",
+    "description": "Mockup Generator PHP App",
+    "require": {
+        "php": "^8.0"
+    }
+}
