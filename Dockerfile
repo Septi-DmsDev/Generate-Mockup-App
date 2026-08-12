@@ -5,13 +5,14 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    libwebp-dev \
     libzip-dev \
     zip \
     unzip \
     && rm -rf /var/lib/apt/lists/*
 
 # Konfigurasi dan install PHP extensions (GD untuk gambar, MySQLi untuk database, Zip)
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
     && docker-php-ext-install -j$(nproc) gd mysqli pdo_mysql zip
 
 # Mengaktifkan modul Apache Rewrite (berguna jika nanti pakai .htaccess)

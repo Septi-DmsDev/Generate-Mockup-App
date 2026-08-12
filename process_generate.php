@@ -34,7 +34,7 @@ foreach ($allFiles as $f) {
     
     // Identifikasi gambar asli dari user
     $ext = strtolower(pathinfo($base, PATHINFO_EXTENSION));
-    if (in_array($ext, ['jpg', 'jpeg', 'png'])) { 
+    if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp'])) { 
         $userImages[] = $base; 
     }
 }
