@@ -34,6 +34,11 @@ if (isset($_POST['upload_produk'])) {
             $newFileName = time() . "_" . $key . "_" . rand(100, 999) . ".png";
             $savePath = "backgrounds/" . $newFileName;
 
+            // Buat folder jika belum ada
+            if (!file_exists("backgrounds")) {
+                mkdir("backgrounds", 0777, true);
+            }
+
             if (move_uploaded_file($tmpName, $savePath)) {
                 // Proses Resize & Optimasi (via image.php)
                 $img = prepareBackground($savePath); 
